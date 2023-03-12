@@ -12,7 +12,7 @@ class ArkhamDB
     public static function packs()
     {
         return Cache::rememberForever('arkhamdb.packs', function () {
-            return Http::get(self::$url . '/packs')->body();
+            return Http::get(self::$url . '/packs')->collect();
         });
     }
 
