@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Fondamento;
+  src: url('fonts/Fondamento.ttf');
+}
+
+h1, h2, h3, h4, h5, h6, .text-title {
+    font-family: Fondamento;
+    color: #3b4121;
+}
+
+.bg-green {
+    background: #3b4121;
+}
+
+.border-green {
+    border-color: #3b4121;
+}
+
+.bg-button {
+    background: #3b4121;
+    color: #f0f0f0;
+    transition: all .2s ease-in-out;
+}
+
+.bg-button:hover {
+    background: #6c7545;
+}
+
+.text-green {
+    color: #3b4121;
+}
+
+.bg-cosmos {
+    /* background: radial-gradient(90deg, #3d2c50 0%, #121127 100%); */
+    background: radial-gradient(ellipse at top, #456e87, transparent),
+                radial-gradient(ellipse at bottom, #1e0e2c, transparent),
+                radial-gradient(ellipse at bottom, black, black);
+}
+
+.bg-paper {
+    background: linear-gradient(#e3d0b7, #9f9281 100%);
+}
