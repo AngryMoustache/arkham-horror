@@ -6,11 +6,12 @@
         who is playing and who is their investigator?
     </p>
 
-    <div class="my-8 w-1/3">
+    <div class="my-8 w-full md:w-1/3">
         @foreach ($players as $player)
             <div class="
-                flex gap-4 p-4 items-center justify-between
+                flex gap-4 p-4 md:items-center md:justify-between
                 border-b border-green last:border-0
+                flex-col md:flex-row
             ">
                 <span class="w-full text-xl text-title">
                     {{ $player->name }}

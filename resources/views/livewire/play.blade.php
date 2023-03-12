@@ -2,7 +2,7 @@
     <x-card class="w-full">
         <x-headers.h1 :title="$campaign->set->name" />
 
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             @foreach ($campaign->players as $player)
                 <x-player.card :$player />
             @endforeach

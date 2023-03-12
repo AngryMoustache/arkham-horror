@@ -1,4 +1,7 @@
-<div class="w-96 sticky top-0 bg-paper flex flex-col gap-4 p-4">
+<div class="
+    w-full relative top-0 bg-paper flex flex-col gap-4 p-4
+    md:w-96 md:sticky
+">
     <x-nav.item
         label="Dashboard"
         icon="heroicon-o-home"

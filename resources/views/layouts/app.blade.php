@@ -10,7 +10,10 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-cosmos">
-        <div class="flex h-screen overflow-y-auto w-full">
+        <div class="
+            flex flex-col h-screen overflow-y-auto w-full
+            md:flex-row
+        ">
             <x-nav />
 
             <x-container>

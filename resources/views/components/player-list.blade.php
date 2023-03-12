@@ -6,7 +6,9 @@
         ">
             <span class="w-full">{{ $player->name }}</span>
 
-            <span class="w-full">Investigator in {{ $player->campaigns->count() }} campaign(s)</span>
+            <span class="w-full hidden sm:block">
+                Investigator in {{ $player->campaigns->count() }} campaign(s)
+            </span>
 
             <div class="w-full flex justify-end">
                 <x-form.button wire:click="deletePlayer({{ $player->id }})">

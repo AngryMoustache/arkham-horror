@@ -1,6 +1,6 @@
-<div class="flex gap-4">
+<div class="flex flex-col md:flex-row gap-4">
     @foreach ($sets as $set)
-        <x-card class="w-1/2">
+        <x-card class="md:w-1/2">
             <x-headers.h1 :title="$set->name" />
 
             <x-campaign-list :campaigns="$set->campaigns" />
