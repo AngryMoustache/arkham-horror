@@ -7,9 +7,27 @@
   src: url('fonts/Fondamento.ttf');
 }
 
+@font-face {
+  font-family: Merriweather;
+  src: url('fonts/Merriweather.ttf');
+}
+
+@font-face {
+  font-family: SpaceMono;
+  src: url('fonts/SpaceMono.ttf');
+}
+
+p, label, option, select {
+    font-family: Merriweather;
+}
+
 h1, h2, h3, h4, h5, h6, .text-title {
     font-family: Fondamento;
     color: #3b4121;
+}
+
+.text-typed {
+    font-family: SpaceMono;
 }
 
 .bg-green {
@@ -43,4 +61,8 @@ h1, h2, h3, h4, h5, h6, .text-title {
 
 .bg-paper {
     background: linear-gradient(#e3d0b7, #9f9281 100%);
+}
+
+.bg-paper-reverse {
+    background: linear-gradient(160deg, #d7c4ac, #e3d0b7 50%);
 }

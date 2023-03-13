@@ -1,34 +1,41 @@
 <x-card>
-    <x-headers.h1 title="New Campaign" />
+    <x-headers.h1 title="New {{ $set->name }} Campaign" />
 
-    <p>
-        Starting a new campaign for the "{{ $set->name }}" set,
-        who is playing and who is their investigator?
-    </p>
+    <x-form.grid class="md:w-1/2 pt-6 pb-8">
+        <x-form.grid.row label="Difficulty">
+            <x-form.select
+                wire:model.defer="fields.difficulty"
+                :options="[
+                    'easy' => 'Easy',
+                    'standard' => 'Standard',
+                    'hard' => 'Hard',
+                    'expert' => 'Expert',
+                ]"
+            />
+        </x-form.grid.row>
 
-    <div class="my-8 w-full md:w-1/3">
-        @foreach ($players as $player)
-            <div class="
-                flex gap-4 p-4 md:items-center md:justify-between
-                border-b border-green last:border-0
-                flex-col md:flex-row
-            ">
-                <span class="w-full text-xl text-title">
-                    {{ $player->name }}
-                </span>
+        <x-form.grid.row label="Players">
+            <div class="flex flex-col gap-4">
+                @foreach ($players as $player)
+                    <div class="flex gap-2">
+                        <span class="w-1/3 text-xl text-title">
+                            {{ $player->name }}
+                        </span>
 
-                <x-form.select
-                    label="Pick investigator if playing"
-                    wire:model.defer="fields.investigators.{{ $player->id }}"
-                    :options="$investigators"
-                />
+                        <x-form.select
+                            label="- not playing -"
+                            wire:model.defer="fields.investigators.{{ $player->id }}"
+                            :options="$investigators->pluck('name', 'id')->sort()"
+                        />
+                    </div>
+                @endforeach
             </div>
-        @endforeach
-    </div>
+        </x-form.grid.row>
+    </x-form.grid>
 
     <x-form.button
         label="Begin new campaign"
         wire:click="startCampaign"
-        class="text-2xl px-6 py-3"
+        class="text-xl px-6 py-3"
     />
 </x-card>

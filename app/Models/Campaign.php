@@ -2,16 +2,19 @@
 
 namespace App\Models;
 
+use App\Enums\Difficulty;
 use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
     protected $fillable = [
         'set_id',
+        'difficulty',
         'information',
     ];
 
     public $casts = [
+        'difficulty' => Difficulty::class,
         'information' => 'json',
     ];
 

@@ -13,6 +13,7 @@ class NewCampaign extends Component
     public Set $set;
 
     public array $fields = [
+        'difficulty' => 'standard',
         'investigators' => [],
     ];
 
@@ -36,7 +37,9 @@ class NewCampaign extends Component
         $players = collect($this->fields['investigators'])->filter();
 
         $campaign = $this->set->campaigns()->create([
-            'information' => [],
+            'information' => [
+                'difficulty' => $this->fields['difficulty'],
+            ],
         ]);
 
         $players->each(function ($investigator, $player) use ($campaign) {
