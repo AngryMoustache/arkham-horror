@@ -1,7 +1,14 @@
 <x-card>
-    <x-headers.h1 title="New {{ $set->name }} Campaign" />
+    <x-headers.h1 title="New Campaign" />
 
     <x-form.grid class="md:w-1/2 pt-6 pb-8">
+        <x-form.grid.row label="Campaign">
+            <x-form.select
+                wire:model.defer="fields.set_id"
+                :options="json_decode($sets)"
+            />
+        </x-form.grid.row>
+
         <x-form.grid.row label="Difficulty">
             <x-form.select
                 wire:model.defer="fields.difficulty"

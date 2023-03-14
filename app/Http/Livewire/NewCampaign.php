@@ -6,13 +6,17 @@ use App\Enums\CardType;
 use App\Models\Card;
 use App\Models\Player;
 use App\Models\Set;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class NewCampaign extends Component
 {
     public Set $set;
 
+    public string $sets;
+
     public array $fields = [
+        'set_id' => null,
         'difficulty' => 'standard',
         'investigators' => [],
     ];
@@ -20,6 +24,13 @@ class NewCampaign extends Component
     public function mount(Set $set)
     {
         $this->set = $set;
+
+        $this->sets = Set::orderBy('name')
+            ->pluck('name', 'id')
+            ->reject(fn ($name) => Str::contains($name, 'Investigator Expansion'))
+            ->toJson();
+
+        $this->fields['set_id'] = $set->id;
     }
 
     public function render()
@@ -37,9 +48,9 @@ class NewCampaign extends Component
         $players = collect($this->fields['investigators'])->filter();
 
         $campaign = $this->set->campaigns()->create([
-            'information' => [
-                'difficulty' => $this->fields['difficulty'],
-            ],
+            'set_id' => $this->fields['set_id'],
+            'difficulty' => $this->fields['difficulty'],
+            'information' => [],
         ]);
 
         $players->each(function ($investigator, $player) use ($campaign) {

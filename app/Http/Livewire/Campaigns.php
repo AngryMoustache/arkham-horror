@@ -10,7 +10,7 @@ class Campaigns extends Component
     public function render()
     {
         return view('livewire.campaigns', [
-            'sets' => Set::get(),
+            'sets' => Set::whereHas('campaigns')->get(),
         ]);
     }
 }

@@ -5,19 +5,22 @@
         tabs: @js($tabs),
     }"
 >
-    <div class="relative w-11/12 flex gap-2">
+    <div class="relative w-11/12 flex md:flex-row flex-col gap-2 ml-4">
         <template x-for="(tab, key) in tabs" :key="key">
             <div
                 x-on:click="open = key"
                 class="
-                    relative flex items-center justify-center px-12 pt-3 pb-7
-                    -mr-4 shadow-lg bg-paper-reverse rounded-t cursor-pointer
+                    relative flex items-center justify-center
+                    shadow-lg bg-paper-reverse rounded-lg cursor-pointer
                     transition-all duration-300 ease-in-out
+
+                    py-2
+                    md:px-12 md:pt-3 md:pb-8 md:-mr-4
                 "
                 :style="'z-index:' + (open === key ? 30 : 30 - key)"
                 :class="{
-                    'bottom-0': open === key,
-                    '-bottom-4 hover:-bottom-3': open !== key,
+                    'md:-bottom-2 py-6': open === key,
+                    'md:-bottom-4 md:hover:-bottom-3': open !== key,
                 }"
             >
                 <span
@@ -28,7 +31,7 @@
         </template>
     </div>
 
-    <div class="relative z-50 bg-paper">
+    <div class="relative z-50 bg-paper rounded-lg mt-4 md:mt-0">
         {{ $slot }}
     </div>
 </div>

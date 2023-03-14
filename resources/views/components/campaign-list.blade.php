@@ -6,7 +6,7 @@
         ">
             <div class="w-full">
                 <p class="text-lg">{{ $campaign->players->pluck('name')->join(', ', ' & ') }}</p>
-                <p class="opacity-75">{{ $campaign->difficulty->label() }} difficulty</p>
+                <p class="opacity-75 text-sm">{{ $campaign->difficulty->label() }} difficulty</p>
             </div>
 
             <div class="w-full flex items-center justify-end">
