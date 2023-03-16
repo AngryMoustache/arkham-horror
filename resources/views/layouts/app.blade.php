@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ env('APP_NAME') }}</title>
-        <script src="https://kit.fontawesome.com/989b502037.js" crossorigin="anonymous"></script>
         <livewire:styles />
         <script src="//unpkg.com/alpinejs" defer></script>
+        <link rel="shortcut icon" href="icon.png">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-cosmos">

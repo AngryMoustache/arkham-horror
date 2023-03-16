@@ -12,7 +12,7 @@
 
             <div class="w-full flex justify-end">
                 <x-form.button wire:click="deletePlayer({{ $player->id }})">
-                    <i class="fas fa-trash"></i>
+                    <x-heroicon-s-trash class="w-4 h-6" />
                 </x-form.button>
             </div>
         </div>
