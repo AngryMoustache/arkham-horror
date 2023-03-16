@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Campaign;
-use App\Scenarios\Scenario;
 use Livewire\Component;
 
 class Play extends Component

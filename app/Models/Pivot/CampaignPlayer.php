@@ -14,6 +14,7 @@ class CampaignPlayer extends Pivot
         'physical_trauma',
         'killed',
         'information',
+        'deck_id',
     ];
 
     public function campaign()

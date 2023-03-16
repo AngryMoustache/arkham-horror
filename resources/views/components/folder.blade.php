@@ -1,11 +1,11 @@
 <div
     class="relative w-full flex flex-col"
     x-data="{
-        open: 0,
+        open: @js((int) request()->query('tab', 0)),
         tabs: @js($tabs),
     }"
 >
-    <div class="relative w-11/12 flex gap-2">
+    <div class="relative w-11/12 flex gap-2 ml-4">
         <template x-for="(tab, key) in tabs" :key="key">
             <div
                 x-on:click="open = key"

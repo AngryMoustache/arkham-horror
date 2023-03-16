@@ -30,6 +30,13 @@ class ArkhamDB
         });
     }
 
+    public static function deck($id)
+    {
+        return Cache::rememberForever("arkhamdb.decks.{$id}", function () use ($id) {
+            return Http::get(self::$url . "/decklist/{$id}")->collect();
+        });
+    }
+
     public static function flush()
     {
         Cache::flush();
