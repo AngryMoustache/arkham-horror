@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Enums\CardType;
+use App\Models\Campaign;
 use App\Models\Card;
 use App\Models\Player;
 use App\Models\Set;
@@ -47,7 +48,7 @@ class NewCampaign extends Component
     {
         $players = collect($this->fields['investigators'])->filter();
 
-        $campaign = $this->set->campaigns()->create([
+        $campaign = Campaign::create([
             'set_id' => $this->fields['set_id'],
             'difficulty' => $this->fields['difficulty'],
             'information' => [],

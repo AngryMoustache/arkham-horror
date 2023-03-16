@@ -1,6 +1,6 @@
 <a {{ $attributes->merge(['class' => '
     inline-block cursor-pointer relative text-title px-4 py-1 bg-button
-    text-white rounded-md shadow-md outline-none overflow-hidden
+    text-white rounded-md shadow-md outline-none overflow-hidden text-center
 ']) }}>
     <span>
         @isset($label) {{ $label }}

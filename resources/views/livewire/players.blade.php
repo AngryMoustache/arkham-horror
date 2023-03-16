@@ -8,7 +8,10 @@
             label="Name"
         />
 
-        <x-form.button wire:click.prevent="newPlayer" label="Create new player" />
+        <x-form.button
+            wire:click.prevent="newPlayer"
+            label="Create new player"
+        />
     </form>
 
     <x-player-list class="mt-4" :$players />

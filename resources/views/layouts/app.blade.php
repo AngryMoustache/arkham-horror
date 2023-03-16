@@ -18,6 +18,8 @@
             </x-container>
         </div>
 
+        <livewire:delete-confirmation />
+
         <livewire:scripts />
     </body>
 </html>

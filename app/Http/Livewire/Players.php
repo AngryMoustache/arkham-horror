@@ -9,6 +9,10 @@ class Players extends Component
 {
     public string $newPlayerName = '';
 
+    protected $listeners = [
+        'refresh' => '$refresh',
+    ];
+
     public function render()
     {
         return view('livewire.players', [
@@ -29,8 +33,11 @@ class Players extends Component
         $this->newPlayerName = '';
     }
 
-    public function deletePlayer(Player $player)
+    public function deletePlayer($playerId)
     {
-        $player->delete();
+        $this->emit('open-modal', 'delete-confirmation', [
+            'modelId' => $playerId,
+            'modelClass' => Player::class,
+        ]);
     }
 }
