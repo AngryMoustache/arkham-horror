@@ -1,4 +1,21 @@
-<div class="flex gap-4 w-full">
+<div class="relative flex gap-4 w-full">
+    @if ($player->pivot->killed)
+        <div
+            class="absolute inset-0 flex justify-center items-center rounded-lg pointer-none z-20"
+            style="background: rgba(0, 0, 0, .8)"
+        >
+            <h1
+                style="border-width: 0.5rem; transform: rotate(-10deg)"
+                class="
+                    px-12 py-4 text-red-500 border rounded-full border-red-500
+                    text-2xl md:text-6xl lg:text-9xl
+                "
+            >
+                DECEASED
+            </h1>
+        </div>
+    @endif
+
     <div class="w-1/3 hidden md:block">
         <div
             class="w-full bg-no-repeat bg-left bg-cover rounded-xl"

@@ -14,14 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Livewire\Dashboard::class)
-    ->name('dashboard');
+Route::get('/', Livewire\Campaigns::class)
+    ->name('campaign.index');
 
 Route::get('/players', Livewire\Players::class)
     ->name('player.index');
-
-Route::get('/campaigns', Livewire\Campaigns::class)
-    ->name('campaign.index');
 
 Route::get('/campaigns/new/{set:code}', Livewire\NewCampaign::class)
     ->name('campaign.create');

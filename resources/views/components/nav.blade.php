@@ -4,15 +4,15 @@
     md:w-96 md:sticky
 ">
     <x-nav.item
-        label="Dashboard"
-        icon="heroicon-o-home"
-        :route="route('dashboard')"
+        label="Campaigns"
+        icon="heroicon-o-archive-box"
+        :route="route('campaign.index')"
     />
 
     <x-nav.item
-        label="Campaigns"
+        label="New Campaign"
         icon="heroicon-o-book-open"
-        :route="route('campaign.index')"
+        :route="route('campaign.create', 'rcore')"
     />
 
     <x-nav.item
