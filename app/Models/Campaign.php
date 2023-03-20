@@ -51,4 +51,9 @@ class Campaign extends Model
     {
         return route('campaign.play', $this->id);
     }
+
+    public function getOverviewNameAttribute()
+    {
+        return $this->set->name . ' - ' . $this->difficulty->label();
+    }
 }
