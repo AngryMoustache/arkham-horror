@@ -20,4 +20,11 @@ class Player extends Model
         return $this->belongsToMany(Campaign::class)
             ->using(Pivot\CampaignPlayer::class);
     }
+
+    public static function booted()
+    {
+        self::addGlobalScope('sorted', function ($query) {
+            $query->orderBy('name');
+        });
+    }
 }
